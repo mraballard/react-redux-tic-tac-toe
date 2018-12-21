@@ -11,13 +11,12 @@ const moveReducer = (state = initialState, action) => {
         case PLAYER_MOVE:
             return {
                 squares: Object.assign([], state.squares, { [action.location]: state.playerTurn }),
-                playerTurn: (state.playerTurn === 'X') ? 'O' : 'X'
+                playerTurn: (state.playerTurn === 'X') ? 'O' : 'X',
             }
         default:
             return state
     }
 }
-
 
 export const ticTacToe = combineReducers({
     moveReducer

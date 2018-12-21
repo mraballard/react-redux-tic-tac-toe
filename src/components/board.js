@@ -7,7 +7,7 @@ export class Board extends React.Component {
     }
 
     render() {
-        const status = `Next player: ${this.props.playerTurn}`;
+        const status = (this.props.winner !== null) ? `Winner: ${this.props.winner}` : `Next player: ${this.props.playerTurn}`;
 
         return (
             <div>
