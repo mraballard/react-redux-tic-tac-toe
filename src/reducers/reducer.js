@@ -1,22 +1,26 @@
 import { combineReducers } from 'redux'
-import {PLAYER_MOVE} from "../actionTypes/actions"
+import { PLAYER_MOVE } from "../actionTypes/actions"
 
 const initialState = {
-    squares: Array(9).fill(null)
+    squares: Array(9).fill(null),
+    playerTurn: 'X',
 }
 
 const moveReducer = (state = initialState, action) => {
     switch (action.type) {
         case PLAYER_MOVE:
-            return Object.assign([], state.squares, {
-                [action.payload.location]: action.payload.playerSymbol
-            })
+            return {
+                squares: Object.assign([], state.squares, { [action.location]: state.playerTurn }),
+                playerTurn: (state.playerTurn === 'X') ? 'O' : 'X'
+            }
+        default:
+            return state
     }
-    return state
 }
 
+
 export const ticTacToe = combineReducers({
-    moveReducer,
+    moveReducer
 })
 
 export default ticTacToe

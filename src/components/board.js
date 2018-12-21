@@ -3,11 +3,11 @@ import {Square} from "./square";
 
 export class Board extends React.Component {
     renderSquare(i) {
-        return <Square value={i}/>;
+        return <Square {...this.props} value={i}/>;
     }
 
     render() {
-        const status = 'Next player: X';
+        const status = `Next player: ${this.props.playerTurn}`;
 
         return (
             <div>

@@ -1,9 +1,8 @@
-import {PLAYER_MOVE} from '../actionTypes'
+import { PLAYER_MOVE } from '../actionTypes/actions'
 
 export const playerMove = (playerSymbol, index) => {
     return {
         type: PLAYER_MOVE,
-        playerSymbol: playerSymbol,
         location: index,
     }
 }

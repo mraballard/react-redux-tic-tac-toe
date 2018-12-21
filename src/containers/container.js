@@ -1,12 +1,20 @@
 import { connect } from 'react-redux'
 import { Game } from '../components/game.js'
+import { playerMove } from "../actionCreators/creators";
 
 const mapStateToProps = (state, ownProps) => {
-    return {}
+    return {
+        squares: state.moveReducer.squares,
+        playerTurn: state.moveReducer.playerTurn,
+    }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {}
+    return {
+        onSquareClick: (playerSymbol, index) => {
+            dispatch(playerMove(playerSymbol, index))
+        }
+    }
 }
 
 const TicTacToeContainer = connect(
