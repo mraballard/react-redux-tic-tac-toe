@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { store } from './store/store'
 
 import TicTacToeContainer from './containers/container'
-import './index.css'
+import './index.scss'
 
 render(
     <Provider store={store}>

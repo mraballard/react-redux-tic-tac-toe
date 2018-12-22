@@ -6,6 +6,11 @@ export class Board extends React.Component {
         return <Square {...this.props} value={i}/>;
     }
 
+    renderResetButton() {
+        return this.props.winner ? <button id="reset-button" onClick={this.props.resetBoard}>Reset board</button>
+            : null
+    }
+
     render() {
         const status = (this.props.winner !== null) ? `Winner: ${this.props.winner}` : `Next player: ${this.props.playerTurn}`;
 
@@ -27,6 +32,7 @@ export class Board extends React.Component {
                     {this.renderSquare(7)}
                     {this.renderSquare(8)}
                 </div>
+                {this.renderResetButton()}
             </div>
         );
     }

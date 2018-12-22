@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { Game } from '../components/game.js'
-import { playerMove } from "../actionCreators/creators"
+import {playerMove, resetBoard} from "../actionCreators/creators"
 import { calculateWinner } from "../selectors/selector";
 
 const mapStateToProps = (state, ownProps) => {
@@ -15,6 +15,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         onSquareClick: (playerSymbol, index) => {
             dispatch(playerMove(playerSymbol, index))
+        },
+        resetBoard: () => {
+            dispatch(resetBoard())
         }
     }
 }

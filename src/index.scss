@@ -43,6 +43,15 @@ ol, ul {
 .game {
     display: flex;
     flex-direction: row;
+
+    #reset-button {
+        padding: 5px 20px;
+        margin-top: 15px;
+        background-color: mediumseagreen;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+    }
 }
 
 .game-info {
